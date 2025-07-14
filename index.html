@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generează PDF din Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    input[type=text] { width: 100%; padding: 10px; font-size: 1rem; margin-bottom: 10px; }
+    button { padding: 10px 20px; font-size: 1rem; }
+    .error { color: red; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Generează PDF cu conținutul unui site</h1>
+  <form method="post" action="/">
+    <input type="text" name="url" placeholder="Introdu URL-ul site-ului" required />
+    <button type="submit">Generează PDF</button>
+  </form>
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+</body>
+</html>
